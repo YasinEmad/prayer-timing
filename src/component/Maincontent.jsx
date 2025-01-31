@@ -52,7 +52,7 @@ export default function Maincontent() {
         async function fetchTiming() {
             try {
                 const response = await axios.get(
-                    `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=Egypt&method=2`
+                    `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=Egypt&method=2`
                 );
                 const timings = response.data.data.timings;
                 setTiming(timings);
