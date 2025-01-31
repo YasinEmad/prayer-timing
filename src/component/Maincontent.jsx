@@ -96,18 +96,19 @@ export default function Maincontent() {
     return (
         <div style={{ width: "100%" }}>
             <Grid container spacing={2}>
+            <Grid xs={12} sm={6}>
+                    <div style={{ marginRight: "20px" }}>
+                        <h2 style={{ color: 'white' }}>متبقي حتى صلاة {nextPrayer.name}</h2>
+                        <h2 style={{ color: '#00df9a' }}>{timeRemaining || 'جاري الحساب...'}</h2>
+                    </div>
+                </Grid>
                 <Grid xs={12} sm={6}>
                     <div style={{ marginRight: "20px" }}>
                         <h2 style={{ color: 'white' }}>{currentDate}</h2> {/* الوقت الديناميكي */}
                         <h2 style={{ color: 'white' }}>{city}</h2>
                     </div>
                 </Grid>
-                <Grid xs={12} sm={6}>
-                    <div style={{ marginRight: "20px" }}>
-                        <h2 style={{ color: 'white' }}>متبقي حتى صلاة {nextPrayer.name}</h2>
-                        <h2 style={{ color: '#00df9a' }}>{timeRemaining || 'جاري الحساب...'}</h2>
-                    </div>
-                </Grid>
+                
             </Grid>
             <Divider style={{ marginTop: "20px", backgroundColor: '#444' }} />
             <Box display="flex" justifyContent="center" gap={4} style={{ marginTop: "50px" }}>

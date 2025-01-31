@@ -24,20 +24,18 @@ function App() {
     return (
         <ThemeProvider theme={darkTheme}>
             <CssBaseline />
-            <Container
-                maxWidth="2xl"
-                style={{
-                    height: '100vh',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'flex-start',
-                    paddingTop: '50px',
-                }}
-            >
-                <Maincontent />
+            <div className="background-container" />
+            <Container maxWidth="2xl" className="app-container">
+                {/* Overlay to ensure readability */}
+                <div className="app-overlay" />
+                {/* Main content */}
+                <div className="app-content">
+                    <Maincontent />
+                </div>
             </Container>
         </ThemeProvider>
     );
 }
+
 
 export default App;
