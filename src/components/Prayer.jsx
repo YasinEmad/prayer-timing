@@ -11,19 +11,19 @@ export default function Pray({ name, image, time }) {
                 maxWidth: 345,
                 backgroundColor: 'background.paper',
                 color: 'text.primary',
-                borderRadius: 3, // Rounded corners
-                boxShadow: 3, // Subtle shadow
-                transition: 'transform 0.3s, box-shadow 0.3s', // Smooth hover effect
+                borderRadius: 3,
+                boxShadow: 3,
+                transition: 'transform 0.3s, box-shadow 0.3s',
                 '&:hover': {
-                    transform: 'scale(1.05)', // Slightly enlarge on hover
-                    boxShadow: 6, // Increase shadow on hover
+                    transform: 'scale(1.05)',
+                    boxShadow: 6,
                 },
-                overflow: 'hidden', // Ensure the image doesn't overflow
+                overflow: 'hidden',
             }}
         >
             <CardMedia
                 sx={{
-                    height: 160, // Slightly taller image
+                    height: 160,
                     position: 'relative',
                     '&::after': {
                         content: '""',
@@ -32,7 +32,7 @@ export default function Pray({ name, image, time }) {
                         left: 0,
                         right: 0,
                         bottom: 0,
-                        background: 'linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8))', // Stronger gradient overlay
+                        background: 'linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.8))',
                     },
                 }}
                 image={image}
@@ -40,8 +40,8 @@ export default function Pray({ name, image, time }) {
             />
             <CardContent
                 sx={{
-                    textAlign: 'center', // Center-align content
-                    padding: 3, // More padding for better spacing
+                    textAlign: 'center',
+                    padding: 3,
                 }}
             >
                 <Typography
@@ -49,10 +49,10 @@ export default function Pray({ name, image, time }) {
                     variant="h5"
                     component="div"
                     sx={{
-                        fontWeight: 'bold', // Bold font for emphasis
+                        fontWeight: 'bold',
                         color: 'text.primary',
-                        fontSize: '1.5rem', // Slightly larger font size
-                        marginBottom: 2, // Add spacing
+                        fontSize: '1.5rem',
+                        marginBottom: 2,
                     }}
                 >
                     {name}
@@ -61,10 +61,10 @@ export default function Pray({ name, image, time }) {
                     variant="h2"
                     sx={{
                         color: 'text.secondary',
-                        fontWeight: 'medium', // Medium font weight for time
-                        fontSize: '2.75rem', // Larger font size for time
-                        marginTop: 1, // Add spacing
-                        letterSpacing: '0.05em', // Slightly spaced letters
+                        fontWeight: 'medium',
+                        fontSize: '2.75rem',
+                        marginTop: 1,
+                        letterSpacing: '0.05em',
                     }}
                 >
                     {time}

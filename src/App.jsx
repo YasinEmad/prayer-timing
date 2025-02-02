@@ -1,7 +1,10 @@
+// src/App.jsx
 import './App.css';
-import Maincontent from './component/Maincontent';
+import Maincontent from './components/Maincontent';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
+import { PrayerProvider } from './context/PrayerProvider';
+
 
 const darkTheme = createTheme({
     palette: {
@@ -22,20 +25,19 @@ const darkTheme = createTheme({
 
 function App() {
     return (
-        <ThemeProvider theme={darkTheme}>
-            <CssBaseline />
-            <div className="background-container" />
-            <Container maxWidth="2xl" className="app-container">
-                {/* Overlay to ensure readability */}
-                <div className="app-overlay" />
-                {/* Main content */}
-                <div className="app-content">
-                    <Maincontent />
-                </div>
-            </Container>
-        </ThemeProvider>
+        <PrayerProvider>
+            <ThemeProvider theme={darkTheme}>
+                <CssBaseline />
+                <div className="background-container" />
+                <Container maxWidth="2xl" className="app-container">
+                    <div className="app-overlay" />
+                    <div className="app-content">
+                        <Maincontent />
+                    </div>
+                </Container>
+            </ThemeProvider>
+        </PrayerProvider>
     );
 }
-
 
 export default App;
