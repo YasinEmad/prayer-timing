@@ -18,7 +18,7 @@ export default function Maincontent() {
     const [nextPrayer, setNextPrayer] = useState({ name: '', time: '' });
     const [timeRemaining, setTimeRemaining] = useState('');
 
-    const { timings, loading, error } = usePrayerTimes(city);
+    const { timings} = usePrayerTimes(city);
 
     const cities = [
         { name: "Cairo", displayName: "القاهرة" },
