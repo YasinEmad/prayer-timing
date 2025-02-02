@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Grid2';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
