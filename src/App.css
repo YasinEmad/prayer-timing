@@ -24,6 +24,7 @@ body {
   overflow-x: hidden;
   min-height: 100%;  /* Ensures full height coverage even on scroll */
 }
+
 .background-container {
   position: fixed;
   top: 0;
@@ -38,20 +39,52 @@ body {
 }
 
 .app-overlay {
-  position: absolute;
+  position: fixed; /* Fixed position so it stays in place while scrolling */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
   z-index: 1; /* Ensure the overlay is above the background image */
+  pointer-events: none; /* Optional: Allow interactions with elements underneath the overlay */
 }
+
 
 .app-content {
   position: relative;
   z-index: 2; /* Ensure the content is above the overlay */
   min-height: 100%; /* Ensure content area takes full height */
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding-top: 30px; /* Reduce padding on smaller screens */
+  }
+
+  .app-content {
+    padding: 20px; /* Add padding around content */
+  }
+
+  .app-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker overlay for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 20px; /* Further reduce padding for very small screens */
+  }
+
+  .app-content {
+    padding: 10px; /* Adjust content padding */
+  }
+
+  .background-container {
+    background-position: top center; /* Adjust background for smaller screens */
+  }
+}
+
 
 
 

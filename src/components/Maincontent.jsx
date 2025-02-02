@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Grid from '@mui/material/Grid2';
+import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
@@ -10,7 +10,7 @@ import Pray from './Prayer';
 import moment from 'moment';
 
 import usePrayerTimes from '../Hooks/usePrayerTimes';
-import getNextPrayer from '../Utils/getNextPrayer'; // تأكد من المسار الصحيح
+import getNextPrayer from '../Utils/getNextPrayer';
 
 export default function Maincontent() {
     const [city, setCity] = useState("Cairo");
@@ -18,7 +18,7 @@ export default function Maincontent() {
     const [nextPrayer, setNextPrayer] = useState({ name: '', time: '' });
     const [timeRemaining, setTimeRemaining] = useState('');
 
-    const { timings} = usePrayerTimes(city);
+    const { timings } = usePrayerTimes(city);
 
     const cities = [
         { name: "Cairo", displayName: "القاهرة" },
@@ -66,13 +66,13 @@ export default function Maincontent() {
     return (
         <div style={{ width: "100%" }}>
             <Grid container spacing={2}>
-                <Grid xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={6} lg={6}>
                     <div style={{ marginRight: "20px" }}>
                         <h2 style={{ color: 'white' }}>متبقي حتى صلاة {nextPrayer.name}</h2>
                         <h2 style={{ color: '#00df9a' }}>{timeRemaining || 'جاري الحساب...'}</h2>
                     </div>
                 </Grid>
-                <Grid xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={6} lg={6}>
                     <div style={{ marginRight: "20px" }}>
                         <h2 style={{ color: 'white' }}>{currentDate}</h2>
                         <h2 style={{ color: 'white' }}>{city}</h2>
@@ -80,7 +80,7 @@ export default function Maincontent() {
                 </Grid>
             </Grid>
             <Divider style={{ marginTop: "20px", backgroundColor: '#444' }} />
-            <Box display="flex" justifyContent="center" gap={4} style={{ marginTop: "50px" }}>
+            <Box display="flex" justifyContent="center" gap={4} flexWrap="wrap" style={{ marginTop: "50px" }}>
                 {timings ? (
                     <>
                         <Pray name="الفجر" image="/image/prayimage.jpg" time={timings.Fajr} />
@@ -95,7 +95,7 @@ export default function Maincontent() {
             </Box>
             <Divider style={{ marginTop: "20px", backgroundColor: '#444' }} />
             <Box sx={{ minWidth: 120 }}>
-                <FormControl style={{ width: "200px", marginTop: "20px" }}>
+                <FormControl style={{ width: "100%", maxWidth: "200px", marginTop: "20px" }}>
                     <InputLabel id="demo-simple-select-label" style={{ color: 'white' }}>Town</InputLabel>
                     <Select
                         labelId="demo-simple-select-label"
